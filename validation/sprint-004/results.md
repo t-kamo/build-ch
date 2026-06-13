@@ -30,3 +30,40 @@ A successful hidden entrance is achieved by describing the feature as a geologic
 
 Episode001 Stage B approved.
 
+---
+
+## Stage C Narrative Correction
+
+## Status
+
+PROMPT REDESIGN REQUIRED
+
+## Issue
+
+The previous Stage C direction introduced a narrative inconsistency.
+
+The project is not about discovering a pre-existing cave.
+
+The project is about a single person gradually creating a hidden dwelling.
+
+## Correct Stage C Direction
+
+Stage C should represent early excavation progress, not a completed chamber.
+
+Requirements:
+
+- The opening should remain small.
+- A person could barely enter.
+- Only shallow excavation should be visible.
+- No chamber.
+- No room.
+- No interior reveal.
+- No architectural space.
+
+## Desired Viewer Feeling
+
+"Someone has just started digging."
+
+## Decision
+
+Redesign Stage C master prompt around early shallow excavation progress.

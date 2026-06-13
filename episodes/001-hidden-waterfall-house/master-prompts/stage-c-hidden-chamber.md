@@ -1,30 +1,36 @@
-# Stage C — Hidden Chamber Master Prompt
+# Stage C — Early Excavation Progress Master Prompt
 
 ## Purpose
 
 Transform the approved Stage B image into Stage C.
 
-Stage C should reveal that a hidden space exists behind the waterfall.
+Stage C should show that someone has just started digging behind the waterfall.
 
-The chamber should still feel primitive, rough, unfinished, and early-stage.
+This is not a pre-existing cave discovery.
+
+This is the beginning of a single-person hidden dwelling construction process.
 
 ## Stage C Goal
 
-Viewers now understand that there is a hidden chamber behind the waterfall.
+The opening remains small.
 
-However, the space should not feel luxurious yet.
+A person could barely enter.
 
-The image should show:
+Only shallow excavation should be visible.
 
-- Natural rock chamber
-- Primitive interior space
-- Rough stone floor
-- Early construction progress
-- Visual connection to the waterfall
+No chamber.
+
+No room.
+
+No interior reveal.
+
+No architectural space.
 
 ## Optimization Target
 
-Viewers realize there is a hidden space behind the waterfall.
+The viewer should feel:
+
+"Someone has just started digging."
 
 ---
 
@@ -42,15 +48,23 @@ Preserve the same mist and water spray.
 
 Preserve the same lighting direction.
 
-Preserve the same camera logic and scale.
+Preserve the same camera position and scale.
 
-Keep the hidden waterfall location visually connected to the new image.
+Keep everything else exactly the same.
 
-Transition the viewpoint slightly inside the subtle geological recess behind the waterfall, as if the camera is now just inside the rough opening looking into the hidden space. The waterfall should still be visible or strongly implied through the entrance, mist, water spray, reflected daylight, or the bright falling water near the edge of the frame.
+Change only the subtle geological recess behind the waterfall.
 
-Reveal a primitive natural rock chamber carved into dark volcanic stone behind the waterfall. The chamber should be rough, unfinished, and early-stage. Natural volcanic rock walls should remain dominant. The floor should be uneven but slightly cleared, with rough stone texture, damp patches, small rock debris, and simple early construction progress. The space should feel newly discovered and only partially shaped, not finished.
+Make the recess slightly deeper and rougher, as if one person has just begun manually digging into the dark volcanic rock. The opening should remain small, primitive, unfinished, and barely large enough for one adult person to crouch into. Show only shallow excavation progress: broken rock edges, fresh rough stone texture, small rock chips, damp debris, and a slightly uneven floor just inside the opening.
 
-Add only minimal early construction signs: a rough cleared floor area, small stone debris piles, and basic uneven stone shaping. The chamber should not contain modern interior design.
+Do not create a chamber.
+
+Do not create a room.
+
+Do not reveal an interior space.
+
+Do not widen the opening into a cave.
+
+Do not show architectural volume.
 
 Do not add luxury furniture.
 
@@ -70,30 +84,36 @@ Do not add polished floors.
 
 Do not add finished wall panels.
 
-Do not add decorative objects.
+Do not add support beams.
 
-Do not add support beams unless they are extremely minimal and rough.
+Do not add doors.
 
-Do not turn the space into a finished room.
+Do not add artificial structures.
 
 Do not lose the waterfall context.
 
-The final image should show a believable primitive hidden chamber behind the waterfall, with natural rock walls dominant and only early construction progress visible.
+The final image should show the same waterfall environment with a small rough recess that now looks slightly hand-dug, early-stage, and unfinished. It should feel like the first visible progress toward a hidden dwelling, not like a completed hidden chamber.
 
 ---
 
 ## 2. Validation Checklist
 
-- Stage B waterfall identity is still visually connected
-- Same dark volcanic rock material is preserved
-- Same natural location logic is preserved
-- Waterfall, mist, water spray, or reflected daylight remains connected to the chamber
-- Chamber is clearly visible
-- Chamber feels hidden behind the waterfall
-- Chamber is primitive and unfinished
-- Natural rock walls dominate the image
-- Floor is rough stone, not polished
-- Only early construction progress is visible
+- Same waterfall identity is preserved
+- Same dark volcanic cliff is preserved
+- Same vegetation is preserved
+- Same mist and water spray are preserved
+- Same lighting direction is preserved
+- Same camera position and scale are preserved
+- Only the existing recess changes
+- Opening remains small
+- A person could barely enter
+- Only shallow excavation is visible
+- Fresh rough stone texture is visible
+- Small rock chips or damp debris are visible
+- No chamber
+- No room
+- No interior reveal
+- No architectural space
 - No luxury furniture
 - No beds
 - No sofas
@@ -101,38 +121,40 @@ The final image should show a believable primitive hidden chamber behind the wat
 - No lighting fixtures
 - No glass
 - No modern architecture
-- No polished surfaces
-- No finished wall panels
-- Scale feels human and believable
-- Viewers understand that a hidden space exists
+- No support beams
+- Viewer feels someone has just started digging
 
 ---
 
 ## 3. Failure Modes
 
+### Narrative Failure
+
+The image suggests a pre-existing cave was discovered instead of a person gradually creating a hidden dwelling.
+
+### Chamber Reveal
+
+The model reveals a chamber, room, hallway, cave interior, or architectural space.
+
+### Over-Excavation
+
+The opening becomes too large, too deep, or too finished for early-stage digging.
+
 ### Luxury Jump
 
 The model skips ahead to the final reveal and adds furniture, warm luxury lighting, glass, polished floors, decor, bed, sofa, kitchen, or premium finishes.
 
-### Generic Cave Interior
+### Artificial Construction
 
-The chamber looks like a random cave and loses the waterfall identity or connection to Stage B.
+The model adds support beams, doors, stairs, concrete, panels, lights, tools, or other artificial structures.
 
 ### Environment Disconnect
 
-The waterfall, mist, water spray, reflected daylight, or entrance context disappears completely.
+The waterfall, mist, water spray, lighting, cliff, vegetation, camera, or scale changes.
 
-### Overbuilt Architecture
+### No Progress
 
-The model adds modern walls, beams, windows, doors, stairs, concrete, glass, or finished architectural structures.
-
-### Too Primitive / No Progress
-
-The image shows only a natural cave with no indication that the space is being shaped into a future hidden residence.
-
-### Scale Failure
-
-The chamber becomes too huge, too tiny, or inconsistent with the subtle Stage B recess.
+The image remains identical to Stage B and does not show any shallow digging progress.
 
 ---
 
@@ -140,17 +162,17 @@ The chamber becomes too huge, too tiny, or inconsistent with the subtle Stage B 
 
 Use the previous image as the base image.
 
-Keep the waterfall identity, dark volcanic rock, mist, water spray, lighting direction, camera logic, and scale consistent.
+Keep the waterfall, cliff, vegetation, mist, water spray, lighting direction, camera position, and scale exactly the same.
 
-Reduce all luxury and modern elements.
+Reduce the excavation.
 
-Remove furniture, beds, sofas, kitchen elements, glass, polished floors, decorative lights, finished walls, and modern architecture.
+Remove any chamber, room, hallway, cave interior, architectural space, beams, lights, furniture, glass, polished surfaces, doors, or modern construction.
 
-Show only a primitive unfinished hidden chamber carved into natural dark volcanic rock behind the waterfall.
+Show only a small rough recess behind the waterfall that has been slightly deepened by early manual digging.
 
-The chamber should have rough natural rock walls, an uneven stone floor, damp patches, small rock debris, and very basic early construction progress.
+The opening should remain primitive, unfinished, and barely large enough for one adult person to crouch into.
 
-Keep the waterfall visually connected through the entrance, mist, water spray, reflected daylight, or bright falling water near the edge of the frame.
+Add only fresh rough rock texture, small broken rock chips, damp debris, and a slightly uneven shallow floor inside the small opening.
 
-The final image should make viewers understand that a hidden space exists behind the waterfall, but it should still feel early-stage, rough, natural, and unfinished.
+The viewer should feel that someone has just started digging, not that a hidden chamber already exists.
 
