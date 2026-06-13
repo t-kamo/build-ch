@@ -24,6 +24,19 @@ The opening must be:
 
 Most viewers do not notice the entrance on first glance.
 
+## Approved Learning
+
+Stage B validation passed when the hidden feature was treated visually as a subtle geological recess rather than an explicit entrance, tunnel, or cave.
+
+For future retries, prefer language such as:
+
+- Subtle dark recess
+- Geological recess
+- Natural shadowed rock recess
+- Partially obscured recess behind the waterfall
+
+Use entrance/tunnel/cave wording carefully because Nano Banana tends to exaggerate openings and make them focal points.
+
 ---
 
 ## 1. Nano Banana Prompt
