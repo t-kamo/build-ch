@@ -125,6 +125,22 @@ Examples:
 - Install insulation
 - Add furniture
 
+When testing consistency, avoid language that implies future construction stages. Describe only the visual modification being requested.
+
+For consistency validation, prefer:
+
+- Surface cleaning only
+- Cosmetic cleaning only
+- Remove vegetation only
+- Preserve rock face
+
+For consistency validation, avoid:
+
+- Entrance preparation
+- Entrance area
+- Excavation preparation
+- Expose rock for entry
+
 ---
 
 ## Materials
@@ -257,6 +273,7 @@ Avoid:
 
 - Generating from scratch every scene
 - Multiple changes at once
+- Language that implies future construction stages during consistency tests
 - Camera shifts
 - Weather changes
 - Random redesigns
