@@ -50,9 +50,9 @@ Keep everything else exactly the same.
 
 Change only a tiny section of dark volcanic rock partially hidden behind the falling waterfall.
 
-Add a very subtle small natural tunnel opening behind the waterfall, mostly obscured by water spray and mist. The opening should look like a naturally enlarged vertical crack in the volcanic rock, not a constructed entrance. It should be dark, rough, primitive, unfinished, and only barely large enough for one adult person to crouch through.
+Add a very subtle small natural tunnel opening near the far edge of the waterfall, not in the center of the composition. Place it where the falling water, mist, shadow, and a protruding rock partially obscure it. The opening should look like a naturally enlarged vertical crack in the volcanic rock, not a constructed entrance. It should be dark, rough, primitive, unfinished, and only barely large enough for one adult person to crouch through.
 
-The opening should not be obvious. It should blend into the shadows, wet rock texture, and waterfall mist. Most viewers should notice only the beautiful natural waterfall at first glance.
+The opening should not be obvious and should not become the focal point. It should blend into the shadows, wet rock texture, falling water, and waterfall mist. Most viewers should notice only the beautiful natural waterfall at first glance.
 
 Do not create a large cave.
 
@@ -93,7 +93,10 @@ Final image should look almost identical to Stage A, except for a barely noticea
 - Same static elevated front-facing camera
 - Same scale
 - Opening is small and subtle
+- Opening is positioned near the edge of the waterfall, not centered
 - Opening is partially hidden behind falling water or mist
+- Opening is partially obscured by rock, shadow, water, or mist
+- Waterfall remains the dominant subject
 - Opening looks like a natural volcanic rock crack
 - Opening is rough, primitive, and unfinished
 - No visible interior room
@@ -112,6 +115,10 @@ Final image should look almost identical to Stage A, except for a barely noticea
 ### Entrance Too Obvious
 
 The opening becomes the main subject, too bright, too centered, too clean, or too clearly shaped.
+
+### Entrance Centered
+
+The opening appears in the middle of the waterfall or composition and becomes the focal point.
 
 ### Entrance Too Large
 
@@ -143,7 +150,9 @@ Keep the waterfall, cliff, vegetation, mist, terrain, lighting, camera position,
 
 Reduce the tunnel opening significantly.
 
-Make it look like a narrow natural dark crack in the volcanic rock, mostly hidden behind falling water and mist.
+Move visual emphasis away from the opening. The waterfall must remain the dominant subject.
+
+Make the opening look like a narrow natural dark crack near the edge of the waterfall, mostly hidden behind falling water, protruding rock, shadow, and mist.
 
 The opening should be barely noticeable, primitive, rough, and unfinished.
 
@@ -154,4 +163,3 @@ Do not show any interior.
 Do not add lights, beams, doors, furniture, markings, tools, workers, or artificial structures.
 
 The final image should look almost identical to the original natural waterfall image, with only a subtle shadow-like crack behind the water.
-
