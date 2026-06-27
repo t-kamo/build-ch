@@ -64,6 +64,30 @@ def generation_mode(start_image: Optional[Path], end_image: Optional[Path]) -> s
     return "IMAGE_TO_VIDEO" if start_image and end_image else "TEXT_TO_VIDEO"
 
 
+def load_env_if_available(root: Path) -> None:
+    env_path = root / ".env"
+    if not env_path.exists():
+        print(f"No .env file found at {env_path}. Using environment variables and defaults.")
+        return
+
+    try:
+        from dotenv import load_dotenv
+    except ImportError:
+        print("python-dotenv is not installed. Using environment variables and defaults.")
+        return
+
+    load_dotenv(env_path)
+
+
+def configured_video_model() -> str:
+    model = os.getenv("VIDEO_MODEL") or DEFAULT_VIDEO_MODEL
+    if os.getenv("VIDEO_MODEL"):
+        print(f"Using video model: {model}")
+    else:
+        print(f"VIDEO_MODEL missing. Using default: {model}")
+    return model
+
+
 def write_metadata(
     metadata_dir: Path,
     transition_id: str,
@@ -147,6 +171,7 @@ def main() -> int:
     args = parser.parse_args()
 
     root = repo_root()
+    load_env_if_available(root)
     episode_dir = root / "episodes" / args.episode
     prompts_path = episode_dir / "prompts" / "video-prompts.json"
     output_dir = episode_dir / "clips"
@@ -158,7 +183,7 @@ def main() -> int:
 
     start_image = resolve_reference(root, args.reference_start, "Start")
     end_image = resolve_reference(root, args.reference_end, "End")
-    model = os.getenv("VIDEO_MODEL", DEFAULT_VIDEO_MODEL)
+    model = configured_video_model()
 
     if args.dry_run:
         write_placeholder_clips(args.episode, transitions, output_dir, metadata_dir, model, start_image, end_image)
@@ -174,4 +199,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -39,6 +39,7 @@ Then set:
 GEMINI_API_KEY=your_api_key_here
 GOOGLE_GENAI_USE_VERTEXAI=false
 IMAGE_MODEL=gemini-3.1-flash-image
+VIDEO_MODEL=veo-3.1-generate-preview
 ```
 
 `IMAGE_MODEL` controls the Gemini image generation model used by `scripts/generate_images.py`.
@@ -175,6 +176,8 @@ python3 scripts/generate_videos.py \
 ```
 
 The current MVP creates placeholder clips and metadata only. Real Gemini/Veo video API integration will be added later.
+
+`VIDEO_MODEL` controls the intended Veo model recorded in video metadata. The current Sprint 3 MVP does not call the real video API yet.
 
 Video metadata is written to:
 
