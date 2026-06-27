@@ -187,7 +187,27 @@ python3 scripts/generate_videos.py \
   --reference-end episodes/episode002/images/stage_I.png
 ```
 
+Start-frame-only Image-to-Video generation:
+
+```bash
+python3 scripts/generate_videos.py \
+  --episode episode002 \
+  --transition H_to_I \
+  --reference-start episodes/episode002/images/stage_H.png \
+  --start-only
+```
+
 `VIDEO_MODEL` controls the Veo model used for real video generation and recorded in video metadata.
+
+### Video Troubleshooting
+
+If video output shows duplicate people, teleporting, or unstable motion:
+
+- use `--start-only`
+- reduce action scope
+- use fixed camera language in the prompt
+- avoid using conflicting start/end frames
+- prefer lighting, atmosphere, and reveal changes over large physical transformations
 
 Video metadata is written to:
 

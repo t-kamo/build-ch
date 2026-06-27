@@ -68,7 +68,7 @@ def resolve_reference(root: Path, reference_path: Optional[str], label: str) -> 
 
 
 def generation_mode(start_image: Optional[Path], end_image: Optional[Path]) -> str:
-    return "IMAGE_TO_VIDEO" if start_image and end_image else "TEXT_TO_VIDEO"
+    return "IMAGE_TO_VIDEO" if start_image else "TEXT_TO_VIDEO"
 
 
 def load_env_if_available(root: Path) -> None:
@@ -190,6 +190,7 @@ def write_metadata(
     start_image: Optional[Path],
     end_image: Optional[Path],
     prompt: str,
+    start_only: bool,
 ) -> Path:
     metadata_dir.mkdir(parents=True, exist_ok=True)
     output_path = metadata_dir / f"{transition_id}.json"
@@ -199,6 +200,7 @@ def write_metadata(
         "generation_mode": mode,
         "start_image": str(start_image) if start_image else None,
         "end_image": str(end_image) if end_image else None,
+        "start_only": start_only,
         "prompt": prompt,
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
@@ -215,6 +217,7 @@ def write_placeholder_clips(
     model: str,
     start_image: Optional[Path],
     end_image: Optional[Path],
+    start_only: bool,
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     mode = generation_mode(start_image, end_image)
@@ -237,6 +240,7 @@ def write_placeholder_clips(
                     f"Generation mode: {mode}",
                     f"Start image: {start_image or 'None'}",
                     f"End image: {end_image or 'None'}",
+                    f"Start only: {start_only}",
                     "",
                     f"Action: {action}",
                     "",
@@ -248,7 +252,7 @@ def write_placeholder_clips(
             encoding="utf-8",
         )
         print(f"Created placeholder clip: {output_path}")
-        write_metadata(metadata_dir, transition_id, model, mode, start_image, end_image, prompt)
+        write_metadata(metadata_dir, transition_id, model, mode, start_image, end_image, prompt, start_only)
 
 
 def generate_real_videos(
@@ -259,11 +263,15 @@ def generate_real_videos(
     model: str,
     start_image: Optional[Path],
     end_image: Optional[Path],
+    start_only: bool,
 ) -> None:
     mode = generation_mode(start_image, end_image)
     print(f"Generation mode: {mode}")
 
-    if (start_image and not end_image) or (end_image and not start_image):
+    if start_only and not start_image:
+        raise SystemExit("--start-only requires --reference-start.")
+
+    if not start_only and ((start_image and not end_image) or (end_image and not start_image)):
         raise SystemExit("Both --reference-start and --reference-end are required for IMAGE_TO_VIDEO generation.")
 
     try:
@@ -278,7 +286,7 @@ def generate_real_videos(
     output_dir.mkdir(parents=True, exist_ok=True)
 
     start_frame = image_from_path(start_image) if start_image else None
-    end_frame = image_from_path(end_image) if end_image else None
+    end_frame = image_from_path(end_image) if end_image and not start_only else None
 
     for transition in transitions:
         transition_id = transition["id"]
@@ -306,7 +314,7 @@ def generate_real_videos(
 
             output_path.write_bytes(video_bytes)
             print(f"Saved video: {output_path}")
-            write_metadata(metadata_dir, transition_id, model, mode, start_image, end_image, prompt)
+            write_metadata(metadata_dir, transition_id, model, mode, start_image, end_image, prompt, start_only)
         except Exception as exc:
             raise SystemExit(f"API failure for transition {transition_id}: {exc}") from exc
 
@@ -317,6 +325,11 @@ def main() -> int:
     parser.add_argument("--transition", help="Optional transition id, e.g. H_to_I")
     parser.add_argument("--reference-start", help="Optional start frame image path")
     parser.add_argument("--reference-end", help="Optional end frame image path")
+    parser.add_argument(
+        "--start-only",
+        action="store_true",
+        help="Use only --reference-start and do not send an end frame to the video model.",
+    )
     parser.add_argument(
         "--dry-run",
         action="store_true",
@@ -336,15 +349,24 @@ def main() -> int:
     transitions = filter_transitions(transitions, args.transition)
 
     start_image = resolve_reference(root, args.reference_start, "Start")
-    end_image = resolve_reference(root, args.reference_end, "End")
+    end_image = None if args.start_only else resolve_reference(root, args.reference_end, "End")
     model = configured_video_model()
 
     if args.dry_run:
-        write_placeholder_clips(args.episode, transitions, output_dir, metadata_dir, model, start_image, end_image)
+        write_placeholder_clips(
+            args.episode,
+            transitions,
+            output_dir,
+            metadata_dir,
+            model,
+            start_image,
+            end_image,
+            args.start_only,
+        )
         return 0
 
     api_key, model = load_required_env(root)
-    generate_real_videos(transitions, output_dir, metadata_dir, api_key, model, start_image, end_image)
+    generate_real_videos(transitions, output_dir, metadata_dir, api_key, model, start_image, end_image, args.start_only)
     return 0
 
 

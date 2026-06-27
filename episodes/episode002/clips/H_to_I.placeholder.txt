@@ -6,9 +6,10 @@ Dry-run mode: no paid external API was called.
 TODO: Replace this stub with Veo video generation.
 Generation mode: IMAGE_TO_VIDEO
 Start image: /Users/t.kamo/Documents/build-ch/episodes/episode002/images/stage_H.png
-End image: /Users/t.kamo/Documents/build-ch/episodes/episode002/images/stage_I.png
+End image: None
+Start only: True
 
 Action: The finished hidden cliffside home is revealed at sunset.
 
 Prompt:
-Photorealistic cinematic reveal shot. The finished hidden cliffside workshop home glows with warm lantern light at sunset, showing the natural rock entrance, wooden door, small terrace, cliff view, stone and timber construction, realistic scale, and handcrafted appearance. One clear action only: final reveal. Preserve cliff, environment, and scale.
+Photorealistic cinematic fixed-camera reveal shot of the hidden cliffside workshop home at sunset. Exactly one male craftsman is visible, the same male craftsman from the reference image. No additional people. No duplicate characters. No teleporting. No sudden body position changes. The craftsman remains near the entrance throughout the shot. Use a locked camera with only a slow cinematic push-in. Show only subtle final reveal changes: lantern light turns warmer, the interior glow becomes stronger, dust settles gently, and evening light deepens. No major architecture transformation. Preserve the cliff, wooden entrance, terrace, stone and timber construction, realistic scale, and handcrafted appearance.
