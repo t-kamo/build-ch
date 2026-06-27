@@ -164,6 +164,8 @@ This catches animation problems earlier, reduces regeneration work, and preserve
 
 ### Video Generation
 
+Real Veo generation may consume credits. Run dry-run first and only run real generation when the start/end images have been accepted.
+
 Dry-run Image-to-Video transition generation:
 
 ```bash
@@ -175,9 +177,17 @@ python3 scripts/generate_videos.py \
   --dry-run
 ```
 
-The current MVP creates placeholder clips and metadata only. Real Gemini/Veo video API integration will be added later.
+Real Veo Image-to-Video generation:
 
-`VIDEO_MODEL` controls the intended Veo model recorded in video metadata. The current Sprint 3 MVP does not call the real video API yet.
+```bash
+python3 scripts/generate_videos.py \
+  --episode episode002 \
+  --transition H_to_I \
+  --reference-start episodes/episode002/images/stage_H.png \
+  --reference-end episodes/episode002/images/stage_I.png
+```
+
+`VIDEO_MODEL` controls the Veo model used for real video generation and recorded in video metadata.
 
 Video metadata is written to:
 

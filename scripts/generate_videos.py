@@ -4,12 +4,16 @@
 import argparse
 import json
 import os
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
 
 DEFAULT_VIDEO_MODEL = "veo-3.1-generate-preview"
+VALID_TRANSITIONS = {"A_to_B", "B_to_C", "C_to_D", "D_to_E", "E_to_F", "F_to_G", "G_to_H", "H_to_I"}
+POLL_INTERVAL_SECONDS = 10
+MAX_POLL_ATTEMPTS = 60
 
 
 def repo_root() -> Path:
@@ -35,6 +39,10 @@ def filter_transitions(transitions: list[dict], requested_transition: Optional[s
     if not requested_transition:
         return transitions
 
+    if requested_transition not in VALID_TRANSITIONS:
+        valid = ", ".join(sorted(VALID_TRANSITIONS))
+        raise SystemExit(f"Invalid --transition value: {requested_transition}. Valid transitions are: {valid}")
+
     selected = [transition for transition in transitions if transition.get("id") == requested_transition]
     if not selected:
         available = ", ".join(transition.get("id", "?") for transition in transitions)
@@ -54,8 +62,7 @@ def resolve_reference(root: Path, reference_path: Optional[str], label: str) -> 
         path = root / path
 
     if not path.exists():
-        print(f"{label} image not found: {path}")
-        return None
+        raise SystemExit(f"Missing {label.lower()} reference image: {path}")
 
     return path
 
@@ -79,6 +86,35 @@ def load_env_if_available(root: Path) -> None:
     load_dotenv(env_path)
 
 
+def load_required_env(root: Path) -> tuple[str, str]:
+    env_path = root / ".env"
+    if not env_path.exists():
+        raise SystemExit(
+            f"Missing .env file: {env_path}\n"
+            "Create it from .env.example and set GEMINI_API_KEY and VIDEO_MODEL before real video generation."
+        )
+
+    try:
+        from dotenv import load_dotenv
+    except ImportError as exc:
+        raise SystemExit(
+            "Missing dependency: python-dotenv\n"
+            "Install dependencies with: python3 -m pip install google-genai python-dotenv"
+        ) from exc
+
+    load_dotenv(env_path)
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise SystemExit("Missing GEMINI_API_KEY in .env")
+
+    video_model = os.getenv("VIDEO_MODEL")
+    if not video_model:
+        raise SystemExit("Missing VIDEO_MODEL in .env")
+
+    print(f"Using video model: {video_model}")
+    return api_key, video_model
+
+
 def configured_video_model() -> str:
     model = os.getenv("VIDEO_MODEL") or DEFAULT_VIDEO_MODEL
     if os.getenv("VIDEO_MODEL"):
@@ -86,6 +122,64 @@ def configured_video_model() -> str:
     else:
         print(f"VIDEO_MODEL missing. Using default: {model}")
     return model
+
+
+def create_genai_client(api_key: str):
+    try:
+        from google import genai
+    except ImportError as exc:
+        raise SystemExit(
+            "Missing dependency: google-genai\n"
+            "Install dependencies with: python3 -m pip install google-genai python-dotenv"
+        ) from exc
+
+    return genai.Client(api_key=api_key)
+
+
+def image_from_path(path: Path):
+    try:
+        from google.genai import types
+    except ImportError as exc:
+        raise SystemExit(
+            "Missing dependency: google-genai\n"
+            "Install dependencies with: python3 -m pip install google-genai python-dotenv"
+        ) from exc
+
+    mime_type = "image/png" if path.suffix.lower() == ".png" else None
+    return types.Image.from_file(location=str(path), mime_type=mime_type)
+
+
+def wait_for_video_operation(client, operation):
+    for attempt in range(1, MAX_POLL_ATTEMPTS + 1):
+        done = getattr(operation, "done", False)
+        if done:
+            return operation
+
+        print(f"Waiting for Veo operation... attempt {attempt}/{MAX_POLL_ATTEMPTS}")
+        time.sleep(POLL_INTERVAL_SECONDS)
+        operation = client.operations.get(operation)
+
+    raise TimeoutError("Veo operation did not complete before the polling limit.")
+
+
+def extract_video_bytes(client, operation) -> bytes:
+    response = getattr(operation, "result", None) or getattr(operation, "response", None)
+    generated_videos = getattr(response, "generated_videos", None) if response else None
+    if not generated_videos:
+        raise ValueError("No video returned by Veo API")
+
+    video = getattr(generated_videos[0], "video", None)
+    if not video:
+        raise ValueError("Generated video response did not include a video object")
+
+    video_bytes = getattr(video, "video_bytes", None)
+    if video_bytes:
+        return video_bytes
+
+    try:
+        return client.files.download(file=video)
+    except Exception as exc:
+        raise ValueError(f"Video was returned but could not be downloaded: {exc}") from exc
 
 
 def write_metadata(
@@ -157,6 +251,66 @@ def write_placeholder_clips(
         write_metadata(metadata_dir, transition_id, model, mode, start_image, end_image, prompt)
 
 
+def generate_real_videos(
+    transitions: list[dict],
+    output_dir: Path,
+    metadata_dir: Path,
+    api_key: str,
+    model: str,
+    start_image: Optional[Path],
+    end_image: Optional[Path],
+) -> None:
+    mode = generation_mode(start_image, end_image)
+    print(f"Generation mode: {mode}")
+
+    if (start_image and not end_image) or (end_image and not start_image):
+        raise SystemExit("Both --reference-start and --reference-end are required for IMAGE_TO_VIDEO generation.")
+
+    try:
+        from google.genai import types
+    except ImportError as exc:
+        raise SystemExit(
+            "Missing dependency: google-genai\n"
+            "Install dependencies with: python3 -m pip install google-genai python-dotenv"
+        ) from exc
+
+    client = create_genai_client(api_key)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    start_frame = image_from_path(start_image) if start_image else None
+    end_frame = image_from_path(end_image) if end_image else None
+
+    for transition in transitions:
+        transition_id = transition["id"]
+        prompt = transition["prompt"]
+        output_path = output_dir / f"{transition_id}.mp4"
+        print(f"Generating transition {transition_id} with Veo API...")
+
+        try:
+            config = types.GenerateVideosConfig(
+                numberOfVideos=1,
+                aspectRatio="16:9",
+                durationSeconds=8,
+                lastFrame=end_frame,
+            )
+            operation = client.models.generate_videos(
+                model=model,
+                prompt=prompt,
+                image=start_frame,
+                config=config,
+            )
+            operation = wait_for_video_operation(client, operation)
+            video_bytes = extract_video_bytes(client, operation)
+            if not video_bytes:
+                raise ValueError("No video bytes returned by Veo API")
+
+            output_path.write_bytes(video_bytes)
+            print(f"Saved video: {output_path}")
+            write_metadata(metadata_dir, transition_id, model, mode, start_image, end_image, prompt)
+        except Exception as exc:
+            raise SystemExit(f"API failure for transition {transition_id}: {exc}") from exc
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate transition clips.")
     parser.add_argument("--episode", required=True, help="Episode folder name, e.g. episode002")
@@ -189,12 +343,9 @@ def main() -> int:
         write_placeholder_clips(args.episode, transitions, output_dir, metadata_dir, model, start_image, end_image)
         return 0
 
-    mode = generation_mode(start_image, end_image)
-    print(f"Generation mode: {mode}")
-    raise SystemExit(
-        "Real video generation is not implemented yet. "
-        "TODO: Add Gemini/Veo API integration here. Use --dry-run for the current MVP."
-    )
+    api_key, model = load_required_env(root)
+    generate_real_videos(transitions, output_dir, metadata_dir, api_key, model, start_image, end_image)
+    return 0
 
 
 if __name__ == "__main__":
