@@ -1,0 +1,10 @@
+Episode: episode002
+Transition: D_to_E
+
+Placeholder video clip output.
+TODO: Replace this stub with Veo video generation.
+
+Action: The craftsman removes rocks and modestly expands the cavity.
+
+Prompt:
+Photorealistic cinematic static shot. The same male craftsman removes loose rocks and modestly expands the shallow cavity into a small rough work chamber. One clear action only: chamber expansion. Prioritize continuity over dramatic progress. Preserve cliff, lighting, environment, scale, and character consistency.

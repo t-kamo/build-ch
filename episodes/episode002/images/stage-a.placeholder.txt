@@ -1,0 +1,10 @@
+Episode: episode002
+Stage: A
+Name: Untouched Cliff
+
+Placeholder image output.
+Dry-run mode: no paid external API was called.
+TODO: Replace this stub with Gemini API / Nano Banana image generation.
+
+Prompt:
+Photorealistic cinematic wide shot of a massive untouched cliff in remote wilderness. The male craftsman, 30-35 years old, short black hair, no beard, khaki outdoor jacket, dark brown work pants, brown leather boots, black leather gloves, small olive green backpack, stands small in the landscape looking up at the cliff. Keep the same cliff, lighting, environment, and scale. No construction, no entrance, no tools in use.

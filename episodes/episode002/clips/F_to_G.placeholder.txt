@@ -1,0 +1,10 @@
+Episode: episode002
+Transition: F_to_G
+
+Placeholder video clip output.
+TODO: Replace this stub with Veo video generation.
+
+Action: The craftsman builds the floor, walls, and entrance frame.
+
+Prompt:
+Photorealistic cinematic static shot. The same male craftsman builds a simple wooden floor, rough walls, and entrance frame. One clear action only: basic structure build. Keep handcrafted scale and preserve cliff, lighting, environment, and character consistency.

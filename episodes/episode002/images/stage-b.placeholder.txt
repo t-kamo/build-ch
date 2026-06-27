@@ -1,0 +1,10 @@
+Episode: episode002
+Stage: B
+Name: Rock Crack Discovery
+
+Placeholder image output.
+Dry-run mode: no paid external API was called.
+TODO: Replace this stub with Gemini API / Nano Banana image generation.
+
+Prompt:
+Photorealistic cinematic shot of the same massive cliff and lighting. The same male craftsman notices a narrow natural rock crack in the cliff face. The crack is subtle and human-scale, not a cave. Keep the same cliff, environment, scale, outfit, and character appearance.

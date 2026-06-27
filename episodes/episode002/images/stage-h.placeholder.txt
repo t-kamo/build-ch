@@ -1,0 +1,12 @@
+Episode: episode002
+Stage: H
+Name: Interior Furnishing
+
+Placeholder image output.
+Dry-run mode: no paid external API was called.
+TODO: Replace this stub with Gemini API / Nano Banana image generation.
+Generation mode: IMAGE_TO_IMAGE
+Reference image: /Users/t.kamo/Documents/build-ch/episodes/episode002/images/stage_I.png
+
+Prompt:
+Photorealistic cinematic shot of the same cliff workshop interior. The same male craftsman furnishes the space with warm lanterns, wooden shelves, and a small stove. The space remains handcrafted and practical, not luxurious. Keep the same cliff, lighting logic, environment, scale, and character appearance.

@@ -1,0 +1,10 @@
+Episode: episode002
+Transition: A_to_B
+
+Placeholder video clip output.
+TODO: Replace this stub with Veo video generation.
+
+Action: The craftsman slowly walks along the base of the massive cliff and discovers one narrow natural rock crack.
+
+Prompt:
+Photorealistic cinematic static shot. The same male craftsman walks slowly along the untouched cliff and stops when he notices a narrow rock crack. One clear action only: discovery. Preserve cliff, lighting, environment, scale, and character consistency.

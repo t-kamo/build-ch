@@ -1,0 +1,9 @@
+{
+  "transition": "H_to_I",
+  "model": "veo-3.1-generate-preview",
+  "generation_mode": "IMAGE_TO_VIDEO",
+  "start_image": "/Users/t.kamo/Documents/build-ch/episodes/episode002/images/stage_H.png",
+  "end_image": "/Users/t.kamo/Documents/build-ch/episodes/episode002/images/stage_I.png",
+  "prompt": "Photorealistic cinematic reveal shot. The finished hidden cliffside workshop home glows with warm lantern light at sunset, showing the natural rock entrance, wooden door, small terrace, cliff view, stone and timber construction, realistic scale, and handcrafted appearance. One clear action only: final reveal. Preserve cliff, environment, and scale.",
+  "timestamp": "2026-06-27T06:48:39.658731+00:00"
+}

@@ -1,0 +1,63 @@
+{
+  "episode": "episode002",
+  "title": "Cliffside Workshop",
+  "transitions": [
+    {
+      "id": "A_to_B",
+      "start_stage": "A",
+      "end_stage": "B",
+      "action": "The craftsman slowly walks along the base of the massive cliff and discovers one narrow natural rock crack.",
+      "prompt": "Photorealistic cinematic static shot. The same male craftsman walks slowly along the untouched cliff and stops when he notices a narrow rock crack. One clear action only: discovery. Preserve cliff, lighting, environment, scale, and character consistency."
+    },
+    {
+      "id": "B_to_C",
+      "start_stage": "B",
+      "end_stage": "C",
+      "action": "The craftsman clears vegetation and loose stones from around the crack.",
+      "prompt": "Photorealistic cinematic static shot. The same male craftsman clears vegetation and loose stones from around the narrow rock crack. One clear action only: surface clearing. No digging. Preserve cliff, lighting, environment, scale, and character consistency."
+    },
+    {
+      "id": "C_to_D",
+      "start_stage": "C",
+      "end_stage": "D",
+      "action": "The craftsman begins shallow digging with a pickaxe.",
+      "prompt": "Photorealistic cinematic static shot. The same male craftsman begins shallow scraping and light pickaxe work at the rock crack. One clear action only: initial digging. Keep excavation human-scale with minimal debris. Preserve cliff silhouette, lighting, environment, scale, and character consistency."
+    },
+    {
+      "id": "D_to_E",
+      "start_stage": "D",
+      "end_stage": "E",
+      "action": "The craftsman removes rocks and modestly expands the cavity.",
+      "prompt": "Photorealistic cinematic static shot. The same male craftsman removes loose rocks and modestly expands the shallow cavity into a small rough work chamber. One clear action only: chamber expansion. Prioritize continuity over dramatic progress. Preserve cliff, lighting, environment, scale, and character consistency."
+    },
+    {
+      "id": "E_to_F",
+      "start_stage": "E",
+      "end_stage": "F",
+      "action": "The craftsman installs simple timber support beams.",
+      "prompt": "Photorealistic cinematic static shot. The same male craftsman carries and installs simple timber beams inside the rough cliff opening. One clear action only: timber support installation. Preserve cliff, lighting, environment, scale, and character consistency."
+    },
+    {
+      "id": "F_to_G",
+      "start_stage": "F",
+      "end_stage": "G",
+      "action": "The craftsman builds the floor, walls, and entrance frame.",
+      "prompt": "Photorealistic cinematic static shot. The same male craftsman builds a simple wooden floor, rough walls, and entrance frame. One clear action only: basic structure build. Keep handcrafted scale and preserve cliff, lighting, environment, and character consistency."
+    },
+    {
+      "id": "G_to_H",
+      "start_stage": "G",
+      "end_stage": "H",
+      "action": "The craftsman furnishes the workshop with lanterns, shelves, and a stove.",
+      "prompt": "Photorealistic cinematic static shot. The same male craftsman places warm lanterns, wooden shelves, and a small stove inside the workshop. One clear action only: practical furnishing. Preserve cliff, lighting logic, environment, scale, and character consistency."
+    },
+    {
+      "id": "H_to_I",
+      "start_stage": "H",
+      "end_stage": "I",
+      "action": "The finished hidden cliffside home is revealed at sunset.",
+      "prompt": "Photorealistic cinematic reveal shot. The finished hidden cliffside workshop home glows with warm lantern light at sunset, showing the natural rock entrance, wooden door, small terrace, cliff view, stone and timber construction, realistic scale, and handcrafted appearance. One clear action only: final reveal. Preserve cliff, environment, and scale."
+    }
+  ]
+}
+

@@ -1,0 +1,10 @@
+Episode: episode002
+Transition: G_to_H
+
+Placeholder video clip output.
+TODO: Replace this stub with Veo video generation.
+
+Action: The craftsman furnishes the workshop with lanterns, shelves, and a stove.
+
+Prompt:
+Photorealistic cinematic static shot. The same male craftsman places warm lanterns, wooden shelves, and a small stove inside the workshop. One clear action only: practical furnishing. Preserve cliff, lighting logic, environment, scale, and character consistency.

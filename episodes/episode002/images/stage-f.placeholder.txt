@@ -1,0 +1,10 @@
+Episode: episode002
+Stage: F
+Name: Timber Support
+
+Placeholder image output.
+Dry-run mode: no paid external API was called.
+TODO: Replace this stub with Gemini API / Nano Banana image generation.
+
+Prompt:
+Photorealistic cinematic shot of the same cliff and rough small chamber. The same male craftsman installs simple timber beams by hand to support the opening. Stone remains dominant. Keep the same cliff, lighting, environment, scale, and character appearance. No luxury finish.

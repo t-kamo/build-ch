@@ -1,0 +1,10 @@
+Episode: episode002
+Stage: G
+Name: Structure Build
+
+Placeholder image output.
+Dry-run mode: no paid external API was called.
+TODO: Replace this stub with Gemini API / Nano Banana image generation.
+
+Prompt:
+Photorealistic cinematic shot of the same cliff workshop. The same male craftsman builds a simple wooden floor, rough walls, and a natural entrance frame inside the cliff opening. Use stone and timber construction with realistic scale and handcrafted appearance. Keep the same lighting, environment, scale, and character appearance.

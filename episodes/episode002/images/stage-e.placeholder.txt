@@ -1,0 +1,10 @@
+Episode: episode002
+Stage: E
+Name: Chamber Expansion
+
+Placeholder image output.
+Dry-run mode: no paid external API was called.
+TODO: Replace this stub with Gemini API / Nano Banana image generation.
+
+Prompt:
+Photorealistic cinematic shot of the same cliff. The same male craftsman removes rocks and modestly expands the cavity into a small rough work chamber. Show limited rubble accumulation and believable one-person progress. Keep the same cliff, lighting, environment, scale, and character appearance. No finished room.

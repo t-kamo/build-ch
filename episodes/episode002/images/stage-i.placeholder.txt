@@ -1,0 +1,10 @@
+Episode: episode002
+Stage: I
+Name: Sunset Reveal
+
+Placeholder image output.
+Dry-run mode: no paid external API was called.
+TODO: Replace this stub with Gemini API / Nano Banana image generation.
+
+Prompt:
+Photorealistic cinematic sunset reveal of the finished hidden cliffside workshop home. The natural rock entrance has a wooden door, small wooden terrace, warm lantern light, cliff view, stone and timber construction, realistic scale, and handcrafted appearance. The same male craftsman stands nearby. Keep the same cliff, environment, and scale.

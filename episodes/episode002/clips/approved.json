@@ -1,0 +1,26 @@
+{
+  "A_to_B.placeholder.txt": {
+    "approved": true
+  },
+  "B_to_C.placeholder.txt": {
+    "approved": true
+  },
+  "C_to_D.placeholder.txt": {
+    "approved": true
+  },
+  "D_to_E.placeholder.txt": {
+    "approved": true
+  },
+  "E_to_F.placeholder.txt": {
+    "approved": true
+  },
+  "F_to_G.placeholder.txt": {
+    "approved": true
+  },
+  "G_to_H.placeholder.txt": {
+    "approved": true
+  },
+  "H_to_I.placeholder.txt": {
+    "approved": true
+  }
+}

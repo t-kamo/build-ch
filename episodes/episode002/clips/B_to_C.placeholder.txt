@@ -1,0 +1,10 @@
+Episode: episode002
+Transition: B_to_C
+
+Placeholder video clip output.
+TODO: Replace this stub with Veo video generation.
+
+Action: The craftsman clears vegetation and loose stones from around the crack.
+
+Prompt:
+Photorealistic cinematic static shot. The same male craftsman clears vegetation and loose stones from around the narrow rock crack. One clear action only: surface clearing. No digging. Preserve cliff, lighting, environment, scale, and character consistency.

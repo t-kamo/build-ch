@@ -1,0 +1,10 @@
+Episode: episode002
+Stage: C
+Name: Surface Clearing
+
+Placeholder image output.
+Dry-run mode: no paid external API was called.
+TODO: Replace this stub with Gemini API / Nano Banana image generation.
+
+Prompt:
+Photorealistic cinematic shot of the same cliff and narrow rock crack. The same male craftsman clears only vegetation and loose stones near the crack. Show slight surface cleaning only, minimal debris, no digging yet. Keep the same cliff, lighting, environment, scale, and character appearance.

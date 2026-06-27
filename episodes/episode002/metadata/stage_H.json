@@ -1,0 +1,8 @@
+{
+  "stage": "H",
+  "prompt": "Photorealistic cinematic shot of the same cliff workshop interior. The same male craftsman furnishes the space with warm lanterns, wooden shelves, and a small stove. The space remains handcrafted and practical, not luxurious. Keep the same cliff, lighting logic, environment, scale, and character appearance.",
+  "image_model": "gemini-3.1-flash-image",
+  "generation_mode": "IMAGE_TO_IMAGE",
+  "reference_image_path": "/Users/t.kamo/Documents/build-ch/episodes/episode002/images/stage_I.png",
+  "timestamp": "2026-06-27T06:39:22.962207+00:00"
+}

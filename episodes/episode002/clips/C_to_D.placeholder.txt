@@ -1,0 +1,10 @@
+Episode: episode002
+Transition: C_to_D
+
+Placeholder video clip output.
+TODO: Replace this stub with Veo video generation.
+
+Action: The craftsman begins shallow digging with a pickaxe.
+
+Prompt:
+Photorealistic cinematic static shot. The same male craftsman begins shallow scraping and light pickaxe work at the rock crack. One clear action only: initial digging. Keep excavation human-scale with minimal debris. Preserve cliff silhouette, lighting, environment, scale, and character consistency.

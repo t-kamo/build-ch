@@ -1,0 +1,64 @@
+{
+  "episode": "episode002",
+  "title": "Cliffside Workshop",
+  "style": "photorealistic cinematic style",
+  "global_consistency": {
+    "character": "male craftsman, 30-35 years old, short black hair, no beard, khaki outdoor jacket, dark brown work pants, brown leather boots, black leather gloves, small olive green backpack",
+    "environment": "massive natural cliff in remote wilderness, rugged stone face, sparse vegetation, realistic scale",
+    "rules": [
+      "Keep the same cliff, lighting, environment, and scale.",
+      "Keep the same character appearance in every stage.",
+      "Use photorealistic cinematic style.",
+      "Show one clear construction progression per stage.",
+      "Avoid unrealistic excavation volume or sudden luxury interiors."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "A",
+      "name": "Untouched Cliff",
+      "prompt": "Photorealistic cinematic wide shot of a massive untouched cliff in remote wilderness. The male craftsman, 30-35 years old, short black hair, no beard, khaki outdoor jacket, dark brown work pants, brown leather boots, black leather gloves, small olive green backpack, stands small in the landscape looking up at the cliff. Keep the same cliff, lighting, environment, and scale. No construction, no entrance, no tools in use."
+    },
+    {
+      "stage": "B",
+      "name": "Rock Crack Discovery",
+      "prompt": "Photorealistic cinematic shot of the same massive cliff and lighting. The same male craftsman notices a narrow natural rock crack in the cliff face. The crack is subtle and human-scale, not a cave. Keep the same cliff, environment, scale, outfit, and character appearance."
+    },
+    {
+      "stage": "C",
+      "name": "Surface Clearing",
+      "prompt": "Photorealistic cinematic shot of the same cliff and narrow rock crack. The same male craftsman clears only vegetation and loose stones near the crack. Show slight surface cleaning only, minimal debris, no digging yet. Keep the same cliff, lighting, environment, scale, and character appearance."
+    },
+    {
+      "stage": "D",
+      "name": "Initial Digging",
+      "prompt": "Photorealistic cinematic shot of the same cliff. The same male craftsman begins shallow digging with a pickaxe at the narrow crack. Show slight rock disturbance, shallow scraping, and minimal debris. Keep excavation human-scale and early-stage. Preserve cliff silhouette, lighting, environment, scale, and character appearance."
+    },
+    {
+      "stage": "E",
+      "name": "Chamber Expansion",
+      "prompt": "Photorealistic cinematic shot of the same cliff. The same male craftsman removes rocks and modestly expands the cavity into a small rough work chamber. Show limited rubble accumulation and believable one-person progress. Keep the same cliff, lighting, environment, scale, and character appearance. No finished room."
+    },
+    {
+      "stage": "F",
+      "name": "Timber Support",
+      "prompt": "Photorealistic cinematic shot of the same cliff and rough small chamber. The same male craftsman installs simple timber beams by hand to support the opening. Stone remains dominant. Keep the same cliff, lighting, environment, scale, and character appearance. No luxury finish."
+    },
+    {
+      "stage": "G",
+      "name": "Structure Build",
+      "prompt": "Photorealistic cinematic shot of the same cliff workshop. The same male craftsman builds a simple wooden floor, rough walls, and a natural entrance frame inside the cliff opening. Use stone and timber construction with realistic scale and handcrafted appearance. Keep the same lighting, environment, scale, and character appearance."
+    },
+    {
+      "stage": "H",
+      "name": "Interior Furnishing",
+      "prompt": "Photorealistic cinematic shot of the same cliff workshop interior. The same male craftsman furnishes the space with warm lanterns, wooden shelves, and a small stove. The space remains handcrafted and practical, not luxurious. Keep the same cliff, lighting logic, environment, scale, and character appearance."
+    },
+    {
+      "stage": "I",
+      "name": "Sunset Reveal",
+      "prompt": "Photorealistic cinematic sunset reveal of the finished hidden cliffside workshop home. The natural rock entrance has a wooden door, small wooden terrace, warm lantern light, cliff view, stone and timber construction, realistic scale, and handcrafted appearance. The same male craftsman stands nearby. Keep the same cliff, environment, and scale."
+    }
+  ]
+}
+

@@ -1,0 +1,10 @@
+Episode: episode002
+Transition: E_to_F
+
+Placeholder video clip output.
+TODO: Replace this stub with Veo video generation.
+
+Action: The craftsman installs simple timber support beams.
+
+Prompt:
+Photorealistic cinematic static shot. The same male craftsman carries and installs simple timber beams inside the rough cliff opening. One clear action only: timber support installation. Preserve cliff, lighting, environment, scale, and character consistency.
